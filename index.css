@@ -1,0 +1,77 @@
+/* A moment after the delorean starts, a flame appears. When the delorean hits enough speed, an explosion happens, and Doc and Marty are in the year 1985 - back in the future */
+.time-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+p {
+  border: 3px solid;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 5em;
+  margin: 10px auto;
+  background: yellow;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  height: 250px;
+}
+
+#door-in-time {
+  opacity: 0;
+  width: 600px;
+  margin-right: 150px;
+  animation: fade-in-explosion 3s;
+  z-index: 1;
+}
+
+@keyframes fade-in-explosion {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#delorean  {
+  width: 400px;
+  animation-name: drive;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes drive {
+  0% {
+      right: 0;
+      transform: translateX(0);
+    }
+  100% {
+      right: 100%;
+      transform: translateX(-250%);
+    }
+}
+
+
+#flames {
+  height: 150px;
+  margin-top: 50px;
+  opacity: 0;
+  animation-name: flame;
+  animation-duration: 2s;
+  animation-timing-function: ease-out; 
+}
+
+@keyframes flame {
+  0% {
+      right: 0;
+      transform: translateX(0);
+    }
+  10% {
+    opacity: 1;
+  }
+  100% {
+      right: 100%;
+      transform: translateX(-460%);
+    }
+}
